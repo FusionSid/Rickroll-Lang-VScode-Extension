@@ -1,12 +1,11 @@
 # Rickroll-Lang VSCode Extension
 
-* ### [Official Github](https://github.com/Rick-Lang/rickroll-lang/)
-* ### [Official Discord](https://discord.gg/A9VajuEPf7)
+The Rick Roll programming language is a rickroll based, process oriented, dynamic, strong, esoteric programming language. All of the keywords/statements are from Rick Astley's lyrics. 
 
-This command is for the rickroll-lang programming language
+[Discord server](https://discord.gg/yzZ3MfGZ8A)  
+[Official Github](https://github.com/Rick-Lang/rickroll-lang/)
 
-It has some snippets for the language.  
-Also it has the rickroll command which just opens the song in your browser
+This vscode extension currently only has some snippets for the language. It has a rickroll command which opens the song in your browser. Also it adds the RickRoll langauge to you list so when you oepn a `.rickroll` file it shows the language as Rickroll-Lang in the bottom
 
 I will add syntax highlighting when i figure out how to do so.
 
