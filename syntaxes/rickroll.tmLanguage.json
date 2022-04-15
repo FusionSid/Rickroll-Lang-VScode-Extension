@@ -1,0 +1,168 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Rickroll-Lang",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },  
+    {
+      "include": "#list"
+    },
+    {
+      "include": "#tuple"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#keywords"
+    }
+  ],
+  "repository": {
+    "strings": {
+      "name": "string.quoted.double.rickroll",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.rickroll",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "number": {
+      "match": "(?x)        # turn on extended mode\n  -?        # an optional minus\n  (?:\n    0       # a zero\n    |       # ...or...\n    [1-9]   # a 1-9 character\n    \\d*     # followed by zero or more digits\n  )\n  (?:\n    (?:\n      \\.    # a period\n      \\d+   # followed by one or more digits\n    )?\n    (?:\n      [eE]  # an e character\n      [+-]? # followed by an option +/-\n      \\d+   # followed by one or more digits\n    )?      # make exponent optional\n  )?        # make decimal portion optional",
+      "name": "constant.numeric.rickroll"
+    },
+    "comments": {
+      "name": "comment.line.rickroll",
+      "match": "(#).*$"
+    },
+    "list": {
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.rickroll"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.end.rickroll"
+				}
+			},
+			"name": "meta.structure.list.rickroll",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"match": ",",
+					"name": "punctuation.separator.list.rickroll"
+				},
+				{
+					"match": "[^\\s\\]]",
+					"name": "invalid.illegal.expected-list-separator.rickroll"
+				}
+			]
+		},
+    "tuple": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tuple.begin.rickroll"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tuple.end.rickroll"
+				}
+			},
+			"name": "meta.structure.tuple.rickroll",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"match": ",",
+					"name": "punctuation.separator.tuple.rickroll"
+				},
+				{
+					"match": "[^\\s\\)]",
+					"name": "invalid.illegal.expected-tuple-separator.rickroll"
+				}
+			]
+		},
+    "dict": {
+			"begin": "\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.dict.begin.rickroll"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.dict.end.rickroll"
+				}
+			},
+			"name": "meta.structure.dict.rickroll",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"match": ",",
+					"name": "punctuation.separator.dict.rickroll"
+				},
+				{
+					"match": "[^\\s\\}]",
+					"name": "invalid.illegal.expected-dict-separator.rickroll"
+				}
+			]
+		},
+    "keywords": {
+      "patterns": [
+        {
+          "name": "variable.rickroll",
+          "begin": "\\b(give)\\b",
+          "end": "\\b(?=up)\\b"
+        },
+        {
+          "name":"support.function",
+          "match": "[a-zA-Z]+\\([^\\)]*\\)(\\.[^\\)]*\\))?"
+        },
+        {
+          "name": "keyword.operator.comparison.rickroll",
+          "match": "\\b(is\\s*less\\s*than|is\\s*greater\\s*than|is\\s*greater\\s*than\\s*or\\s*equal\\s*to|is\\s*less\\s*than\\s*or\\s*equal\\s*to|aint|is|up)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.rickroll",
+          "match": "(\\+|\\-|\\*|/|%|\\^|=|>|<|<=|>=|!=)"
+          
+        },
+        {
+          "name": "support.function.builtin.rickroll",
+          "match": "\\b(i\\s*just\\s*wanna\\s*tell\\s*u\\s*how\\s*im\\s*feeling\\s*|to_string|to_float|to_int|length|py\\:)\\b"
+        },
+        {
+          "name": "keyword.function.rickroll",
+          "match": "\\b(we\\s*know\\s*the|and\\s*we're\\s*gonna\\s*play\\s*it|and\\s*were\\s*gonna\\s*play\\s*it|desert\\s*u|run\\s*around|and\\s*if\\s*u\\s*ask\\s*me\\s*how\\s*im\\s*feeling|when\\s*i\\s*give\\s*my|it\\s*will\\s*be\\s*completely|there\\s*aint\\s*no\\s*mistaking|if\\s*they\\s*ever\\s*get\\s*u\\s*down|if\\s*they\\s*ever\\s*get\\s*u\\s*down|together\\s*forever\\s*with|together\\s*forever\\s*and\\s*never\\s*to\\s*part)\\b"
+        },
+        {
+          "name": "keyword.function.rickroll",
+          "match": "(gonna|take\\s*me\\s*to\\s*ur\\s*heart|say\\s*goodbye)"
+        },
+        {
+          "name": "variable.parameter.rickroll",
+          "match": "(?<=gonna)(.*)(?=$)"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.rickroll"
+}
