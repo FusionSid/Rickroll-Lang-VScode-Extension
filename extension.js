@@ -1,7 +1,3 @@
-// This is a shit ricklang extenstion
-// It gives some rickroll snipets + rickroll command + Rickroll file thing in the language name
-// I will add syntax highlighting when i figure it out
-
 const vscode = require('vscode');
 /**
  * @param {vscode.ExtensionContext} context
