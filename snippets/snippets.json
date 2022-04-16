@@ -3,7 +3,7 @@
 		"prefix": "rr-main",
 		"body": [
 			"take me to ur heart",
-			"\t${0:i just wanna tell u how im feeling 'Hello World!'}",
+			"\t${0:i just wanna tell u how im feeling \"Hello World!\"}",
 			"say goodbye"
 		],
 		"description": "The main method for the rickroll-lang code"

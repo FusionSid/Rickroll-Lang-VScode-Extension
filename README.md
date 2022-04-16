@@ -14,3 +14,8 @@ I will add syntax highlighting when i figure out how to do so.
 ### Credit:
 - Satin Wuker
 - Rick Astley
+
+
+## With vs Without:
+<img width="300" height="190" src="images/with.png">
+<img width="300" height="190" src="images/without.png">

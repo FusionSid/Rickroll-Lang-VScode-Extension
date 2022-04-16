@@ -4,7 +4,11 @@
 	"displayName": "Rickroll-Lang",
 	"description": "The best programming language ever",
 	"icon": "images/logo.jpeg",
-	"version": "0.0.4",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FusionSid/Rickroll-Lang-VScode-Extension"
+	  },
+	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.66.0"
 	},
