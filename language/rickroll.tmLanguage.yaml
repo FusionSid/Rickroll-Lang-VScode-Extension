@@ -102,15 +102,19 @@ repository:
 
     variables:
         patterns:
-            - name: keyword.operator.assignment.rickroll
-              match: \bup\b
-
             - name: storage.type.rickroll
-              begin: \bgive\b
-              end: \bup\b
+              begin: \bgive (([_A-Z][A-Z0-9]+)|([_a-zA-Z0-9]+)) up\b
+              captures:
+                  "2":
+                      name: "constant.rickroll"
+                  "3":
+                      name: "variable.rickroll"
+              end: $
               patterns:
                   - include: "#operators"
-                  
+                  - include: "#strings"
+                  - include: "#number"
+
                   - name: "constant.rickroll"
                     match: "[_A-Z][A-Z0-9]*"
 
@@ -160,10 +164,9 @@ repository:
               patterns:
                   - name: "variable.rickroll"
                     match: "[_a-zA-Z][_a-zA-Z0-9]*"
-                  
+
                   - name: punctuation.separator.arguments.rickroll
                     match: ","
-
 
             - name: "entity.name.function.rickroll"
               begin: "[_a-zA-Z][_a-zA-Z0-9]+\\("
