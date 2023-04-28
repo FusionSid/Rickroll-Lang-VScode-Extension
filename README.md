@@ -17,5 +17,5 @@ Still working on making the syntax highlighting better :)
 
 
 ## With vs Without:
-<img width="300" height="190" src="./assets/with.png">
-<img width="300" height="190" src="./assets/without.png">
+<img width="300" height="190" src="./assets/with.jpg">
+<img width="300" height="190" src="./assets/without.jpg">
