@@ -18,8 +18,9 @@ export function activate(context: vscode.ExtensionContext) {
 		provideHover(document, position, token) {
 			const range = document.getWordRangeAtPosition(position);
 			const word = document.getText(range).split(" ");
-			if (word.length === 1)
+			if (word.length === 1) {
 				return new vscode.Hover(word[0]);
+			}
 		}
 	});
 	context.subscriptions.push(hoverHandler);
