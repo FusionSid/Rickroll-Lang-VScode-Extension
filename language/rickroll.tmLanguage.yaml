@@ -115,7 +115,7 @@ repository:
                   - include: "#strings"
                   - include: "#number"
 
-                  - name: support.function.builtin.rickroll
+                  - name: "entity.name.function.rickroll"
                     match: |-
                         \b(i\s*just\s*wanna\s*tell\s*u\s*how\s*im\s*feeling|to\_string|to\_int|to\_float|length)\b
 
@@ -152,7 +152,7 @@ repository:
                 - include: "#strings"
                 - include: "#number"
 
-                - name: support.function.builtin.rickroll
+                - name: "entity.name.function.rickroll"
                   match: |-
                       \b(i\s*just\s*wanna\s*tell\s*u\s*how\s*im\s*feeling|to\_string|to\_int|to\_float|length)\b
 
@@ -165,7 +165,7 @@ repository:
             - name: keyword.control.flow.rickroll
               match: \b(and\s*if\s*u\s*ask\s*me\s*how\s*im\s*feeling|there\s*aint\s*no\s*mistaking|if\s*they\s*ever\s*get\s*u\s*down|take\s*me\s*to\s*ur\s*heart|say\s*goodbye|desert\s*u|run\s*around|together\s*forever\s*and\s*never\s*to\s*part|together\s*forever\s*with)\b
 
-            - name: support.function.builtin.rickroll
+            - name: "entity.name.function.rickroll"
               match: |-
                   \b(i\s*just\s*wanna\s*tell\s*u\s*how\s*im\s*feeling|to\_string|to\_int|to\_float|length)\b
 
