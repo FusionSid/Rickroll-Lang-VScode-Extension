@@ -115,6 +115,10 @@ repository:
                   - include: "#strings"
                   - include: "#number"
 
+                  - name: support.function.builtin.rickroll
+                    match: |-
+                        \b(i\s*just\s*wanna\s*tell\s*u\s*how\s*im\s*feeling|to\_string|to\_int|to\_float|length)\b
+
                   - name: "constant.rickroll"
                     match: "[_A-Z][A-Z0-9]*"
 
@@ -141,7 +145,25 @@ repository:
               match: "py:"
 
             - name: keyword.control.flow.rickroll
-              match: \b(when\s*i\s*give\s*my|and\s*if\s*u\s*ask\s*me\s*how\s*im\s*feeling|it\s*will\s*be\s*completely|there\s*aint\s*no\s*mistaking|if\s*they\s*ever\s*get\s*u\s*down|take\s*me\s*to\s*ur\s*heart|say\s*goodbye|desert\s*u|run\s*around|together\s*forever\s*and\s*never\s*to\s*part|together\s*forever\s*with)\b
+              begin: when\s*i\s*give\s*my
+              end: it\s*will\s*be\s*completely
+              patterns:
+                - include: "#operators"
+                - include: "#strings"
+                - include: "#number"
+
+                - name: support.function.builtin.rickroll
+                  match: |-
+                      \b(i\s*just\s*wanna\s*tell\s*u\s*how\s*im\s*feeling|to\_string|to\_int|to\_float|length)\b
+
+                - name: "constant.rickroll"
+                  match: "[_A-Z][A-Z0-9]*"
+
+                - name: "variable.rickroll"
+                  match: "[_a-zA-Z][_a-zA-Z0-9]*"
+        
+            - name: keyword.control.flow.rickroll
+              match: \b(and\s*if\s*u\s*ask\s*me\s*how\s*im\s*feeling|there\s*aint\s*no\s*mistaking|if\s*they\s*ever\s*get\s*u\s*down|take\s*me\s*to\s*ur\s*heart|say\s*goodbye|desert\s*u|run\s*around|together\s*forever\s*and\s*never\s*to\s*part|together\s*forever\s*with)\b
 
             - name: support.function.builtin.rickroll
               match: |-
