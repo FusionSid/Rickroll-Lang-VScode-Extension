@@ -14,6 +14,17 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(helloWorld);
+	let hoverHandler = vscode.languages.registerHoverProvider('rickroll', {
+		provideHover(document, position, token) {
+			const range = document.getWordRangeAtPosition(position);
+			const word = document.getText(range).split(" ");
+			if (word.length === 1)
+				return new vscode.Hover(word[0]);
+		}
+	});
+	context.subscriptions.push(hoverHandler);
+
+
 }
 
 export function deactivate() { }
