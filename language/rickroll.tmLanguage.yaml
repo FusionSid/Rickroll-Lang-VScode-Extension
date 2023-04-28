@@ -109,6 +109,8 @@ repository:
               begin: \bgive\b
               end: \bup\b
               patterns:
+                  - include: "#operators"
+                  
                   - name: "constant.rickroll"
                     match: "[_A-Z][A-Z0-9]*"
 
@@ -149,26 +151,34 @@ repository:
                     match: "[_a-zA-Z][_a-zA-Z0-9]*"
 
             - name: storage.type.function.rickroll
-              begin: \b(gonna)\b
+              begin: \bgonna ([_a-zA-Z0-9]+)\b
               end: "$"
+              captures:
+                  "1":
+                      name: "entity.name.function.rickroll"
+
               patterns:
-                  - name: entity.name.function.rickroll
-                    begin: "[_a-zA-Z0-9].*?\\s"
-                    end: "$"
-                    patterns:
-                        - name: "variable.rickroll"
-                          match: "[_a-zA-Z][_a-zA-Z0-9]*"
+                  - name: "variable.rickroll"
+                    match: "[_a-zA-Z][_a-zA-Z0-9]*"
+                  
+                  - name: punctuation.separator.arguments.rickroll
+                    match: ","
+
 
             - name: "entity.name.function.rickroll"
               begin: "[_a-zA-Z][_a-zA-Z0-9]+\\("
               end: "\\)"
               patterns:
+                  - name: punctuation.separator.arguments.rickroll
+                    match: ","
+
                   - include: "#strings"
                   - include: "#number"
-                  - name: "constant.rickroll"
+
+                  - name: "constant.parameter.rickroll"
                     match: "[_A-Z][A-Z0-9]*"
 
-                  - name: "variable.rickroll"
+                  - name: "variable.parameter.rickroll"
                     match: "[_a-zA-Z][_a-zA-Z0-9]*"
 
 scopeName: source.rickroll
