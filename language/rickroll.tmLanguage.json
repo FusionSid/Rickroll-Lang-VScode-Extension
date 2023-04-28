@@ -1,0 +1,228 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Rickroll-Lang",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#keywords"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.rickroll",
+      "match": "#.*$"
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.rickroll",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.rickroll",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.rickroll",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.rickroll",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "number": {
+      "name": "constant.numeric.rickroll",
+      "patterns": [
+        {
+          "name": "constant.numeric.float.rickroll",
+          "match": "(?x)\n  (?<! \\w)(?:\n    (?:\n      \\.[0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\. [0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\.\n    ) (?: [eE][+-]?[0-9](?: _?[0-9] )* )?\n    |\n    [0-9](?: _?[0-9] )* (?: [eE][+-]?[0-9](?: _?[0-9] )* )\n  )([jJ])?\\b\n",
+          "captures": {
+            "1": {
+              "name": "storage.type.imaginary.number.rickroll"
+            }
+          }
+        },
+        {
+          "name": "constant.numeric.dec.rickroll",
+          "match": "(?x)\n  (?<![\\w\\.])(?:\n      [1-9](?: _?[0-9] )*\n      |\n      0+\n      |\n      [0-9](?: _?[0-9] )* ([jJ])\n      |\n      0 ([0-9]+)(?![eE\\.])\n  )\\b\n",
+          "captures": {
+            "1": {
+              "name": "storage.type.imaginary.number.rickroll"
+            },
+            "2": {
+              "name": "invalid.illegal.dec.rickroll"
+            }
+          }
+        },
+        {
+          "name": "constant.numeric.hex.rickroll",
+          "match": "(?x)\n  (?<![\\w\\.])\n    (0[xX]) (_?[0-9a-fA-F])+\n  \\b\n",
+          "captures": {
+            "1": {
+              "name": "storage.type.number.rickroll"
+            }
+          }
+        },
+        {
+          "name": "constant.numeric.oct.rickroll",
+          "match": "(?x)\n  (?<![\\w\\.])\n    (0[oO]) (_?[0-7])+\n  \\b\n",
+          "captures": {
+            "1": {
+              "name": "storage.type.number.rickroll"
+            }
+          }
+        },
+        {
+          "name": "constant.numeric.bin.rickroll",
+          "match": "(?x)\n  (?<![\\w\\.])\n    (0[bB]) (_?[01])+\n  \\b\n",
+          "captures": {
+            "1": {
+              "name": "storage.type.number.rickroll"
+            }
+          }
+        },
+        {
+          "name": "constant.numeric.bin.rickroll",
+          "match": "(?x)\n  (?<![\\w\\.])\n    ([1-9][0-9]* | 0) ([lL])\n  \\b\n",
+          "captures": {
+            "2": {
+              "name": "storage.type.number.rickroll"
+            }
+          }
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.rickroll",
+          "match": "\\bup\\b"
+        },
+        {
+          "name": "storage.type.rickroll",
+          "begin": "\\bgive\\b",
+          "end": "\\bup\\b",
+          "patterns": [
+            {
+              "name": "constant.rickroll",
+              "match": "[_A-Z][A-Z0-9]*"
+            },
+            {
+              "name": "variable.rickroll",
+              "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+            }
+          ]
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.rickroll",
+          "match": "(\\+|\\-|\\*|/|%|\\^|=|~)"
+        },
+        {
+          "name": "punctuation.separator.element.rickroll",
+          "match": ","
+        },
+        {
+          "name": "keyword.operator.comparison.rickroll",
+          "match": "\\b(is\\s*less\\s*than|is\\s*greater\\s*than|is\\s*greater\\s*than\\s*or\\s*equal\\s*to|is\\s*less\\s*than\\s*or\\s*equal\\s*to|>|<|<=|>=|!=)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.rickroll",
+          "match": "\\b(is|aint)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.flow.rickroll",
+          "match": "py:"
+        },
+        {
+          "name": "keyword.control.flow.rickroll",
+          "match": "\\b(when\\s*i\\s*give\\s*my|and\\s*if\\s*u\\s*ask\\s*me\\s*how\\s*im\\s*feeling|it\\s*will\\s*be\\s*completely|there\\s*aint\\s*no\\s*mistaking|if\\s*they\\s*ever\\s*get\\s*u\\s*down|take\\s*me\\s*to\\s*ur\\s*heart|say\\s*goodbye|desert\\s*u|run\\s*around|together\\s*forever\\s*and\\s*never\\s*to\\s*part|together\\s*forever\\s*with)\\b"
+        },
+        {
+          "name": "support.function.builtin.rickroll",
+          "match": "\\b(i\\s*just\\s*wanna\\s*tell\\s*u\\s*how\\s*im\\s*feeling|to\\_string|to\\_int|to\\_float|length)\\b"
+        },
+        {
+          "name": "keyword.control.import.rickroll",
+          "begin": "\\b(we\\s*know\\s*the)\\b",
+          "end": "\\b(and\\s*we're\\s*gonna\\s*play\\s*it)\\b",
+          "patterns": [
+            {
+              "name": "entity.name.namespace.rickroll",
+              "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+            }
+          ]
+        },
+        {
+          "name": "storage.type.function.rickroll",
+          "begin": "\\b(gonna)\\b",
+          "end": "$",
+          "patterns": [
+            {
+              "name": "entity.name.function.rickroll",
+              "begin": "[_a-zA-Z0-9].*?\\s",
+              "end": "$",
+              "patterns": [
+                {
+                  "name": "variable.rickroll",
+                  "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "entity.name.function.rickroll",
+          "begin": "[_a-zA-Z][_a-zA-Z0-9]+\\(",
+          "end": "\\)",
+          "patterns": [
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#number"
+            },
+            {
+              "name": "constant.rickroll",
+              "match": "[_A-Z][A-Z0-9]*"
+            },
+            {
+              "name": "variable.rickroll",
+              "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scopeName": "source.rickroll"
+}
