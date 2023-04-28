@@ -1,0 +1,31 @@
+{
+    "comments": {
+        "lineComment": "#",
+    },
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"]
+    ],
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"],
+        ["\"\"\"", "\"\"\""]
+    ],
+    "surroundingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    "onEnterRules": [
+		{
+			"beforeText": "^\\s*(and\\s*if\\s*u\\s*ask\\s*me\\s*how\\s*im\\s*feeling|take\\s*me\\s*to\\s*ur\\s*heart|together\\s*forever|gonna|there\\s*aint\\s*no\\s*mistaking|if\\s*they\\s*ever\\s*get\\s*u\\s*down)\\s*$",
+			"action": { "indent": "indent" }
+		}
+	]
+}
