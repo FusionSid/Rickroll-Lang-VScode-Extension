@@ -2,7 +2,7 @@
   "name": "rickroll-lang",
   "displayName": "rickroll-lang",
   "description": "Syntax highlighting and Snippets for Rickroll-Lang",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "publisher": "FusionSid",
   "icon": "./assets/logo.jpeg",
   "repository": {
@@ -12,8 +12,7 @@
   "engines": {
     "vscode": "^1.77.0"
   },
-  "activationEvents": [
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "languages": [
@@ -31,20 +30,20 @@
           ".rickastley",
           ".rick"
         ],
-        "configuration": "./src/language-configuration.json"
+        "configuration": "./language/language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "rickroll",
         "scopeName": "source.rickroll",
-        "path": "./src/rickroll.tmLanguage.json"
+        "path": "./language/rickroll.tmLanguage.json"
       }
     ],
     "snippets": [
       {
         "language": "rickroll",
-        "path": "./src/snippets.json"
+        "path": "./language/snippets.json"
       }
     ],
     "commands": [
@@ -64,7 +63,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "yaml": "js-yaml ./language/rickroll.tmLanguage.yaml > ./language/rickroll.tmLanguage.json"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -76,6 +76,7 @@
     "@vscode/test-electron": "^2.3.0",
     "eslint": "^8.39.0",
     "glob": "^8.1.0",
+    "js-yaml": "^4.1.0",
     "mocha": "^10.2.0",
     "typescript": "^5.0.4"
   }
