@@ -1,7 +1,7 @@
 {
   "name": "rickroll-lang",
   "displayName": "rickroll-lang",
-  "description": "Syntax highlighting and Snippets for Rickroll-Lang",
+  "description": "Syntax highlighting and Snippets for the Rickroll-Lang programming language",
   "version": "2.1.1",
   "publisher": "FusionSid",
   "icon": "./assets/logo.jpeg",
@@ -48,11 +48,15 @@
     ],
     "commands": [
       {
+        "command": "rickroll.rickroll",
+        "title": "Rickroll Me"
+      },
+      {
         "command": "rickroll.helloWorld",
         "title": "Hello World"
       },
       {
-        "command": "rickroll.rickroll",
+        "command": "rickroll.rickrollLink",
         "title": "Rickroll"
       }
     ]
