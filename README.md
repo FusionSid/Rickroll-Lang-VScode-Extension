@@ -6,7 +6,7 @@ Syntax highlighting and Snippets for the Rickroll-Lang programming language
 
 ## What is this?
 
-This VS Code extension provides 3 things, Snippets, Syntax Highlighting and Rickroll Commands. It works with rickroll files so to get support for the syntax highlighting use one of the supported file extenstions: `.rickroll`, `.rr`, `.ricklang`, `.rickastley`, `.rick`. You can see an example of the syntax highlighting [bellow](#with-vs-without).
+This VS Code extension provides 3 things, Snippets, Syntax Highlighting and Rickroll Commands. It works with rickroll files so to get support for the syntax highlighting use one of the supported file extenstions: `.rickroll`, `.rr`, `.ricklang`, `.rickastley`, `.rick`. You can see an example of the syntax highlighting [below](#with-vs-without).
 
 This extenstion also provides snippets for common rickroll-lang keywords or statments. For example if you want to print something you could type the whole print statement out `i just wanna tell you how im feeling` or you could type `rr-print` and it would insert the statement there.  
 
